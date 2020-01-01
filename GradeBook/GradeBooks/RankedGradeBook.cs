@@ -22,19 +22,19 @@ namespace GradeBook.GradeBooks
             var numStdIn20 = (int)Math.Ceiling(Students.Count * 0.2);
             var stdSortAvgGrades = Students.OrderByDescending(s => s.AverageGrade).Select(g => g.AverageGrade).ToList();
 
-            if (stdSortAvgGrades.Skip(numStdIn20 - 1).Take(1).First() < averageGrade)
+            if (stdSortAvgGrades.Skip(numStdIn20 - 1).Take(1).First() <= averageGrade)
             {
                 return 'A';
             }
-            else if (stdSortAvgGrades.Skip(numStdIn20 * 2 - 1).Take(1).First() < averageGrade)
+            else if (stdSortAvgGrades.Skip(numStdIn20 * 2 - 1).Take(1).First() <= averageGrade)
             {
                 return 'B';
             }
-            else if (stdSortAvgGrades.Skip(numStdIn20 * 3 - 1).Take(1).First() < averageGrade)
+            else if (stdSortAvgGrades.Skip(numStdIn20 * 3 - 1).Take(1).First() <= averageGrade)
             {
                 return 'C';
             }
-            else if (stdSortAvgGrades.Skip(numStdIn20 * 4 - 1).Take(1).First() < averageGrade)
+            else if (stdSortAvgGrades.Skip(numStdIn20 * 4 - 1).Take(1).First() <= averageGrade)
             {
                 return 'D';
             }
